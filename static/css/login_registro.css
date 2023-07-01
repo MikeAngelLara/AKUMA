@@ -1,0 +1,122 @@
+.form{
+    background-color: white;
+    width: 100%;
+    padding: 2em 3em;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px -1px;
+    text-align: center;
+}
+
+.form__title{
+    font-size: 2.5rem;
+    margin-bottom: .5em;
+    letter-spacing: 1px;
+}
+
+.form__paragraph{
+    font-weight: 300;
+}
+
+.form__link{
+    font-weight: 400;
+    color: black;
+}
+
+.form__container{
+    margin-top: 3em;
+    display: grid;
+    gap: 2.5em;
+}
+
+.form__group{
+    position: relative;
+    --color: #5757577e;
+}
+
+.form__input{
+    width: 100%;
+    background: none;
+    color: #706c6c;
+    padding: .6em .3em;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--color);
+    font-family: 'Crete Round', serif;
+}
+
+.form__input:focus + .form__label, 
+.form__input:placeholder-shown + .form__label
+{
+    transform: translateY(-12px) scale(.7);
+    transform-origin: left top;
+    color: #b12e2e;
+}
+
+.label-up{
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    transition: transform .5s, color .3s;
+    transform: translateY(-12px) scale(.7);
+    transform-origin: left top;
+    color: #b12e2e;
+}
+
+
+.form__paragraph a{
+    color: black;
+}
+ 
+.form__paragraph a:hover{
+    color: #b12e2e;
+}
+
+.form__label{
+    color: var(--color);
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    transform: translateY(10px);
+    transition: transform .5s, color .3s;
+}
+
+.form__submit{
+    background: #b12e2e;
+    color: white;
+    font-family: 'Crete Round', serif;
+    font-weight: 300;
+    font-size: 1rem;
+    padding: .8em 0;
+    border: none;
+    border-radius: .5em;
+}
+
+.form__submit:hover{
+    background: #c21717;
+}
+
+.form__line{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #b12e2e;
+    transform: scale(0);
+    transform: left bottom;
+    transition: transform .4s;
+}
+
+.form__input:focus ~ .form__line, 
+.form__input:placeholder-shown ~ .form__line{
+    transform: scale(1);
+}
+
+@media (max-width:425px){
+    
+    .form__title{
+        font-size: 1.8rem;
+    }
+}

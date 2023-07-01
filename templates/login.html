@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/static/img/logoeditado.png">
+    <link rel="stylesheet" href="/static/css/login_registro.css">
+    <title>Inicio de sesión</title>
+</head>
+<body>
+
+    <form action="" class="form" method="post">
+        <h2 class="form__title">Iniciar sesión</h2>
+
+        <div class="form__container">
+            {{ msg }}
+            <div class="form__group">
+                <input type="email" name="username" id="name" class="form__input" >
+                <label for="name" class="form__label" >Correo:</label>
+                <span class="form__line"></span>
+            </div>
+
+            <div class="form__group">
+                <input type="password" name="password" id="password" class="form__input" >
+                <label for="password" class="form__label" >Contraseña:</label>
+                <span class="form__line"></span>
+            </div>
+
+            <input type="submit" class="form__submit" value="Entrar">
+            <p class="form__paragraph">¿Olvidaste tu contraseña? <br> <a href="" class="form__link">Recuperar contraseña</a></p>
+            <p class="form__paragraph">¿Aún no tienes una cuenta? <br> <a href="/registro" class="form__link">Registrate</a></p>
+            <div id="reloj" style="text-align: right"></div>
+        </div>
+    </form>
+    <script>
+        document.querySelectorAll("input").forEach(input=>{
+            input.addEventListener("change",()=> {
+                const label = document.querySelector(`[for='${input.id}']`)
+                label.classList.remove("form__label")
+                label.classList.add("label-up")
+            })
+        })
+      function mueveReloj(){
+          let momentoActual = new Date()
+          let hora = momentoActual.getHours()
+          let minuto = momentoActual.getMinutes()
+          let segundo = momentoActual.getSeconds()
+          let horaImprimible = hora + " : " + minuto + " : " + segundo
+          let day = momentoActual.getDate();
+          let month = momentoActual.getMonth() + 1;
+          let year = momentoActual.getFullYear()
+          let fecha = day + "-" + month + "-" + year
+          document.getElementById('reloj').innerHTML =  fecha + " " + horaImprimible
+          setTimeout("mueveReloj()",1000)
+      }
+      mueveReloj()
+    </script>
+</body>
+</html>

@@ -1,0 +1,341 @@
+{% extends 'base.html' %}
+{% block titulo %}{% endblock %}
+{% block content %}
+    <link rel="stylesheet" href="/static/css/akuma_clothing.css">
+
+      <main>
+        <div class="container" >
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <div class="col">
+                    <div class="card shadow-sm" style="border-radius: 20px;">
+                        <img src="/static/img/akuma_clothing/sueter_AKUMA/1.JPG" style="border-top-left-radius: 20px; border-top-right-radius: 20px;" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Sueter AKUMA</h5>
+                            <p class="card-text">24.99$</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">Detalles</a>
+                                </div>
+                                <a href="https://wa.link/r3z2n2" target="_blank" class="btn btn-success" >Adquirir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm" style="border-radius: 20px;">
+                        <img src="/static/img/akuma_clothing/franela AKUMA BLACK/1.JPG" style="border-top-left-radius: 20px; border-top-right-radius: 20px;" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Franela AKUMA BLACK</h5>
+                            <p class="card-text">14.99$</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">Detalles</a>
+                                </div>
+                                <a href="https://wa.link/r3z2n2" target="_blank" class="btn btn-success" >Adquirir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm" style="border-radius: 20px;">
+                        <img src="/static/img/akuma_clothing//franela AKUMA WHITE/1.JPG" style="border-top-left-radius: 20px; border-top-right-radius: 20px;" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Franela AKUMA WHITE</h5>
+                            <p class="card-text">14.99$</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3">Detalles</a>
+                                </div>
+                                <a href="https://wa.link/r3z2n2" target="_blank" class="btn btn-success" >Adquirir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!--                 <a href="javascript:void(0)" class="btn btn-success" onclick="agregarCarrito(this)" data-bs-toggle="modal" data-bs-target="#carrito"></a>
+ -->
+                <div class="col">
+                    <div class="card shadow-sm" style="border-radius: 20px;">
+                        <img src="/static/img/akuma_clothing/Franela manga larga AKUMA BLACK/1.JPG" style="border-top-left-radius: 20px; border-top-right-radius: 20px;" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Franela manga larga AKUMA BLACK</h5>
+                            <p class="card-text">19.99$</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal4">Detalles</a>
+                                </div>
+                                <a href="https://wa.link/r3z2n2" target="_blank" class="btn btn-success" >Adquirir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm" style="border-radius: 20px;">
+                        <img src="/static/img/akuma_clothing/Franela manga larga AKUMA WHITE/1.JPG" style="border-top-left-radius: 20px; border-top-right-radius: 20px;" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Franela manga larga AKUMA WHITE</h5>
+                            <p class="card-text">19.99$</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal5">Detalles</a>
+                                </div>
+                                <a href="https://wa.link/r3z2n2" target="_blank" class="btn btn-success" >Adquirir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm" style="border-radius: 20px;">
+                        <img src="/static/img/akuma_clothing/Franela manga larga KOI/1.JPG" style="border-top-left-radius: 20px; border-top-right-radius: 20px;" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Franela manga larga KOI</h5>
+                            <p class="card-text">19.99$</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal6">Detalles</a>
+                                </div>
+                                <a href="https://wa.link/r3z2n2" target="_blank" class="btn btn-success" >Adquirir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- ////////Detalles de los productos//////////////// -->
+
+    <!-- Detalles del Sueter AKUMA -->
+    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel1">Detalles del producto</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                  <div class="col-8">
+                      <img src="/static/img/akuma_clothing/sueter_AKUMA/1.JPG" alt="" style="width: 100%">
+                  </div>
+                  <div class="col-4">
+                      <h5 class="card-title">Sueter Akuma</h5>
+                      <p>Color: negro.
+                         Material: algodon. 
+                         Estampado de buena calidad(Logo y letras color blanco).
+                      </p>
+                      <p class="card-text">24.99$</p>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- Detalles de la franela AKUMA BLACK -->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel2">Detalles del producto</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                  <div class="col-8">
+                      <img src="/static/img/akuma_clothing/franela AKUMA BLACK/1.JPG" alt="" style="width: 100%">
+                  </div>
+                  <div class="col-4">
+                      <h5 class="card-title">Franela AKUMA BLACK</h5>
+                      <p>Color: negro.
+                         Material: algodon.
+                         Estampado de buena calidad(Logo color blanco).
+                      </p>
+                      <p class="card-text">14.99$</p>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Detalles de la franela AKUMA WHITE -->
+    <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel3">Detalles del producto</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                  <div class="col-8">
+                      <img src="/static/img/akuma_clothing/franela AKUMA WHITE/1.JPG" alt="" style="width: 100%">
+                  </div>
+                  <div class="col-4">
+                      <h5 class="card-title">Franela AKUMA WHITE</h5>
+                      <p>Color: Blanco.
+                         Material: algodon.
+                         Estampado de buena calidad(Logo color rojo).
+                      </p>
+                      <p class="card-text">14.99$</p>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Detalles de la franela manga larga AKUMA BLACK -->
+    <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel4" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel4">Detalles del producto</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                  <div class="col-8">
+                      <img src="/static/img/akuma_clothing/Franela manga larga AKUMA BLACK/1.JPG" alt="" style="width: 100%">
+                  </div>
+                  <div class="col-4">
+                      <h5 class="card-title">Franela manga larga AKUMA BLACK</h5>
+                      <p>Color: negro.
+                         Material: algodon.
+                         Estampado de buena calidad(Logo y letras color blanco).
+                      </p>
+                      <p class="card-text">19.99$</p>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    <!-- Detalles de la franela manga larga AKUMA WHITE -->
+    <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel5" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel5">Detalles del producto</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                  <div class="col-8">
+                      <img src="/static/img/akuma_clothing/Franela manga larga AKUMA WHITE/1.JPG" alt="" style="width: 100%">
+                  </div>
+                  <div class="col-4">
+                      <h5 class="card-title">Franela manga larga AKUMA WHITE</h5>
+                      <p>Color: blanco.
+                         Material: algodon.
+                         Estampado de buena calidad(Logo y letras color rojo).</p>
+                      <p class="card-text">19.99$</p>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    <!-- Detalles de Franela manga larga KOI -->
+    <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel6" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel6">Detalles del producto</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+                <div class="col-8">
+                    <img src="/static/img/akuma_clothing/Franela manga larga KOI/1.JPG" alt="" style="width: 100%">
+                </div>
+                <div class="col-4">
+                    <h5 class="card-title">Franela manga larga KOI</h5>
+                    <p>Color: gris.
+                       Material: algodon.
+                       Estampado de buena calidad(Pez Koi y letras color azul claro).
+                    </p>
+                    <p class="card-text">19.99$</p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <!-- Carrito -->
+
+    <div class="modal fade" id="carrito" tabindex="-1" aria-labelledby="carritoLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="carritoLabel">Productos en el carrito</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <div class="row mb-3">
+                <div class="col-4">
+                    Imágen
+                </div>
+                <div class="col-4">
+                   Producto
+                </div>
+                <div class="col-4">
+                    Precio
+                </div>
+              </div>
+              <div id="carritocontent">
+
+              </div>
+
+          </div>
+          <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Comprar</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+        function agregarCarrito(obj,formModal=false){
+            const div1 = obj.parentElement.parentElement
+            const nombre = div1.querySelector(".card-title").textContent
+            const precio = div1.querySelector(".card-text").textContent
+            let img
+            if (formModal === true){
+                img = div1.previousElementSibling.querySelector("img").src
+            }else{
+                img = div1.previousElementSibling.src
+            }
+            const carritoContent = document.getElementById("carritocontent")
+            carritoContent.innerHTML +=`
+            <div class="row mt-2">
+                <div class="col-4">
+                    <img src="${img}" alt="" style="height: 50px;width: auto">
+                </div>
+                <div class="col-4">
+                    ${nombre}
+                </div>
+                <div class="col-2">
+                    ${precio}
+                </div>
+                <div class="col-2">
+                    <a href="javascript:void(0)" onclick="eliminarCarrito(this)"> Eliminar</a>
+                </div>
+            </div>
+            `
+        }
+        function eliminarCarrito(obj){
+            obj.parentNode.parentNode.remove()
+        }
+    </script>
+{% endblock %}

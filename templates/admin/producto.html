@@ -1,0 +1,83 @@
+{% extends 'admin/base.html' %}
+{% block content %}
+<h2 style="display: inline-block;" class="mx-2">Productos</h2>
+<button class="btn btn-primary my-2" data-toggle="modal" data-target="#modal1" style="background-color: #c21616; border-color:#c21616" onclick="crear()">Crear Nuevo</button>
+<div class="table-responsive table--no-card m-b-30">
+    <table class="table table-borderless table-striped table-earning">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Foto</th>
+                <th>Acción</th> 
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto in productos %}
+             <tr>
+                <td>{{ producto.0 }}</td>
+                <td>{{ producto.1 }}</td>
+                <td>{{ producto.2 }}</td>
+                <td>{{ producto.3 }}</td>
+                <td><img src="/static/uploads/{{ producto.4 }}" style="max-width: 50px;max-height:50px" alt=""></td>
+                <td>
+                    <a href="javascript:void(0)" onclick="editar(this)" data-toggle="modal" data-target="#modal1">Editar</a>
+                    <a href="?eliminar={{producto.0}}" >Eliminar</a>
+                </td>
+             </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<script>
+    function editar(element){
+        const tr = element.parentNode.parentNode.children
+        document.getElementById('producto-id').value = tr[0].textContent
+        document.getElementById('nombre').value = tr[1].textContent
+        document.getElementById('descripcion').value = tr[2].textContent
+        document.getElementById('precio').value = tr[3].textContent
+    }
+    function crear(){
+        document.getElementById('producto-id').value = ""
+        document.getElementById('nombre').value = ""
+        document.getElementById('descripcion').value = ""
+        document.getElementById('precio').value = ""
+    }
+</script>
+{% endblock %}
+
+{% block modal %}
+<div class="modal fade" id="modal1" tabindex="-1"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form action="" class="row" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="artista-id" id="artista-id">
+                    <h4 class="text-center" style="display: block;width:100%">Crear Producto</h4>
+                    <div class="col-12">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" class="form-control">
+                    </div>
+                    <div class="col-12">
+                        <label for="descripcion">Descripción</label>
+                        <input type="text" id="descripcion" name="descripcion" class="form-control">
+                    </div>
+                    <div class="col-12">
+                        <label for="precio">Precio</label>
+                        <input type="text" id="precio" name="precio" class="form-control">
+                    </div>      
+                    <div class="col-12 my-2">
+                        <label for="foto">Foto</label>
+                        <input type="file" id="foto" name="foto">
+                    </div>        
+                    <div class="col-12 mt-2">
+                        <input type="submit" class="btn btn-primary" value="Guardar">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

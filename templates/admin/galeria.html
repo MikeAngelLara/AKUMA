@@ -1,0 +1,98 @@
+{% extends 'admin/base.html' %}
+{% block content %}
+<h2 style="display: inline-block;" class="mx-2">Galería</h2>
+<button class="btn btn-primary my-2" data-toggle="modal" data-target="#modal1" style="background-color: #c21616; border-color:#c21616" onclick="crear()">Crear Nuevo</button>
+<div class="table-responsive table--no-card m-b-30">
+    <table class="table table-borderless table-striped table-earning">
+        <thead>
+            <tr>
+                <th>--</th>
+                <th>--</th>
+                <th>--</th>
+                <th>--</th>
+                <th>--</th>
+                <th>--</th>
+                <th>--</th> 
+            </tr>
+        </thead>
+        <tbody>
+            {% for artista in artistas %}
+             <tr>
+                <td>{{ artista.0 }}</td>
+                <td>{{ artista.1 }}</td>
+                <td>{{ artista.2 }}</td>
+                <td><img src="/static/uploads/{{ artista.3 }}" style="max-width: 50px;max-height:50px" alt=""></td>
+                <td>{{ artista.4 }}</td>
+                <td><span>{{ artista.5 }}</span><span>{{ artista.6 }}</span></td>
+                <td>
+                    <a href="javascript:void(0)" onclick="editar(this)" data-toggle="modal" data-target="#modal1">Editar</a>
+                    <a href="?eliminar={{artista.0}}" >Eliminar</a>
+                </td>
+             </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<script>
+    function editar(element){
+        const tr = element.parentNode.parentNode.children
+        document.getElementById('artista-id').value = tr[0].textContent
+        document.getElementById('nombre').value = tr[1].textContent
+        document.getElementById('apellido').value = tr[2].textContent
+        document.getElementById('especialidad').value = tr[4].textContent
+        document.getElementById('facebook').value = tr[5].children[0].textContent
+        document.getElementById('instagram').value = tr[5].children[1].textContent
+    }
+    function crear(){
+        document.getElementById('artista-id').value = ""
+        document.getElementById('nombre').value = ""
+        document.getElementById('apellido').value = ""
+        document.getElementById('especialidad').value = ""
+        document.getElementById('facebook').value = ""
+        document.getElementById('instagram').value = ""
+    }
+</script>
+{% endblock %}
+
+{% block modal %}
+<div class="modal fade" id="modal1" tabindex="-1"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form action="" class="row" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="artista-id" id="artista-id">
+                    <h4 class="text-center" style="display: block;width:100%">Crear Artista</h4>
+                    <div class="col-12">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" class="form-control">
+                    </div>
+                    <div class="col-12">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" id="apellido" name="apellido" class="form-control">
+                    </div>
+                    <div class="col-12 my-2">
+                        <label for="foto">Foto</label>
+                        <input type="file" id="foto" name="foto">
+                    </div>
+                    <div class="col-12">
+                        <label for="especialidad">Especialidad</label>
+                        <input type="text" id="especialidad" name="especialidad" class="form-control">
+                    </div>
+                    <div class="col-12">
+                        <label for="facebook">Facebook</label>
+                        <input type="text" id="facebook" name="facebook" class="form-control">
+                    </div>
+                    <div class="col-12">
+                        <label for="instagram">Instagram</label>
+                        <input type="text" id="instagram" name="instagram" class="form-control">
+                    </div>
+                    <div class="col-12 mt-2">
+                        <input type="submit" class="btn btn-primary" value="Guardar">
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

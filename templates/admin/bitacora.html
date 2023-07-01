@@ -1,0 +1,35 @@
+{% extends 'admin/base.html' %}
+{% block content %}
+<h2 style="display: inline-block;" class="mx-2">Bitacora</h2>
+<form action="" class="my-2">
+    <input type="date" name="desde">
+    <input type="date" name="hasta">
+    <input type="submit" value="Buscar" class="btn btn-primary" style="background-color: #c21616; border-color:#c21616; margin-left: 5px;">
+</form>
+{% if bitacora %}
+<div class="table-responsive table--no-card m-b-30">
+    <table class="table table-borderless table-striped table-earning">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Usuario</th>
+                <th>Registro</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for registro in bitacora %}
+             <tr>
+                <td>{{ registro.0 }}</td>
+                <td>{{ registro.1 }}</td>
+                <td>{{ registro.2 }}</td>
+                <td>{{ registro.3 }}</td>
+             </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+No hay registros
+{% endif %}
+{% endblock %}
