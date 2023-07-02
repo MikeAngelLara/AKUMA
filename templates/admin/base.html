@@ -148,6 +148,9 @@
                                                     <i class="zmdi zmdi-power"></i><b>Cerrar sesión</b></a>
                                             </div>
                                         </div>
+                                        <div class="alert alert-warning" style="display: none;" role="alert">
+                                            <p class="col-xs-9" style="margin-left: 0px;">Cerrado automatico:&nbsp</p><div id="number" style="text-align: left;" class="col-xs-3 text-alert"></div>
+                                        </div>            
                                     </div>
                                 </div>
                             </div>
@@ -183,6 +186,25 @@
     <script src="/static/admin/vendor/animsition/animsition.min.js"></script>
     <!-- Main JS-->
     <script src="/static/admin/js/main.js"></script>
+
+    <script type="text/javascript">
+        n = 300
+        var l = document.getElementById("number");
+        var id = window.setInterval(function(){
+            document.onmousemove = function(){
+                n = 10
+            };
+
+            l.innerText = n;
+            n--;
+
+
+            if (n <= -1) {
+                alert("su sesion expiro");
+                location.href="/";
+            }
+        },1200);
+    </script>
 
 </body>
 
