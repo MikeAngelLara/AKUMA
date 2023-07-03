@@ -6,27 +6,33 @@
     <table class="table table-borderless table-striped table-earning">
         <thead>
             <tr>
-                <th>--</th>
-                <th>--</th>
-                <th>--</th>
-                <th>--</th>
-                <th>--</th>
-                <th>--</th>
-                <th>--</th> 
+                <th>Id</th>
+                <th>Artista</th>
+                <th>foto 1</th>
+                <th>foto 2</th>
+                <th>foto 3</th>
+                <th>foto 4</th>
+                <th>Acción</th> 
             </tr>
         </thead>
         <tbody>
-            {% for artista in artistas %}
+            {% for galeria in galerias %}
              <tr>
-                <td>{{ artista.0 }}</td>
-                <td>{{ artista.1 }}</td>
-                <td>{{ artista.2 }}</td>
-                <td><img src="/static/uploads/{{ artista.3 }}" style="max-width: 50px;max-height:50px" alt=""></td>
-                <td>{{ artista.4 }}</td>
-                <td><span>{{ artista.5 }}</span><span>{{ artista.6 }}</span></td>
+                <td>{{ galeria.0 }}</td>
+                <td>
+                {% for artista in artistas %}
+                    {% if artista.0 == galeria.1 %}
+                        {{artista.1}} {{artista.2}}
+                    {% endif %}
+                {% endfor %}
+                </td>
+                <td><img src="/static/uploads/{{ galeria.2 }}" style="max-width: 100px;max-height:100px" alt=""></td>
+                <td><img src="/static/uploads/{{ galeria.3 }}" style="max-width: 100px;max-height:100px" alt=""></td>
+                <td><img src="/static/uploads/{{ galeria.4 }}" style="max-width: 100px;max-height:100px" alt=""></td>
+                <td><img src="/static/uploads/{{ galeria.5 }}" style="max-width: 100px;max-height:100px" alt=""></td>
                 <td>
                     <a href="javascript:void(0)" onclick="editar(this)" data-toggle="modal" data-target="#modal1">Editar</a>
-                    <a href="?eliminar={{artista.0}}" >Eliminar</a>
+                    <a href="?eliminar={{galeria.0}}" >Eliminar</a>
                 </td>
              </tr>
             {% endfor %}
@@ -60,32 +66,35 @@
         <div class="modal-content">
             <div class="modal-body">
                 <form action="" class="row" method="post" enctype="multipart/form-data">
-                    <input type="hidden" name="artista-id" id="artista-id">
-                    <h4 class="text-center" style="display: block;width:100%">Crear Artista</h4>
+                    <input type="hidden" name="galeria-id" id="galeria-id">
+                    <h4 class="text-center" style="display: block;width:100%">Crear Galeria</h4>
                     <div class="col-12">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" id="nombre" name="nombre" class="form-control">
-                    </div>
-                    <div class="col-12">
-                        <label for="apellido">Apellido</label>
-                        <input type="text" id="apellido" name="apellido" class="form-control">
-                    </div>
-                    <div class="col-12 my-2">
-                        <label for="foto">Foto</label>
-                        <input type="file" id="foto" name="foto">
+                        <label for="artista">Artista</label>
+                        
+                        <select  id="artista" name="artista_id" class="form-control">
+                        {% for artista in artistas %}
+                            <option value="{{artista.0}}">{{artista.1}} {{artista.2}}</option>
+                        {% endfor %}
+                        </select>
+
                     </div>
                     <div class="col-12">
-                        <label for="especialidad">Especialidad</label>
-                        <input type="text" id="especialidad" name="especialidad" class="form-control">
+                        <label for="foto1">foto1</label>
+                        <input type="file" accept="image/*" id="foto1" name="foto1" class="form-control">
                     </div>
                     <div class="col-12">
-                        <label for="facebook">Facebook</label>
-                        <input type="text" id="facebook" name="facebook" class="form-control">
+                        <label for="foto2">foto2</label>
+                        <input type="file" accept="image/*" id="foto2" name="foto2" class="form-control">
                     </div>
                     <div class="col-12">
-                        <label for="instagram">Instagram</label>
-                        <input type="text" id="instagram" name="instagram" class="form-control">
+                        <label for="foto3">foto3</label>
+                        <input type="file" accept="image/*" id="foto3" name="foto3" class="form-control">
                     </div>
+                    <div class="col-12">
+                        <label for="foto4">foto4</label>
+                        <input type="file" accept="image/*" id="foto4" name="foto4" class="form-control">
+                    </div>
+                  
                     <div class="col-12 mt-2">
                         <input type="submit" class="btn btn-primary" value="Guardar">
 

@@ -176,10 +176,70 @@ def admin_producto():
     print(productos)
     return render_template('admin/producto.html')
 
+def save_photo(name:str):
+    foto1 = request.files[name]
+    if foto1.filename == '':
+        flash('No selected file')
+    elif foto1 and allowed_file(foto1.filename):
+        filename = secure_filename(foto1.filename)
+        fullFilename = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        foto1.save(fullFilename)
+    return filename
 
-@app.route("/admin/galeria")
+
+@app.route("/admin/galeria", methods=["GET","POST"])
 def admin_galeria():
-    return render_template('admin/galeria.html')
+    cur = mysql.connection.cursor()
+    if request.method == 'POST':
+        galeria_id = request.form['galeria-id']
+        filenames = {
+            "foto1": "",
+            "foto2": "",
+            "foto3": "",
+            "foto4": ""
+        }
+        for name in filenames:
+            if name in request.files:
+                filenames[name] = save_photo(name)
+        artista_id = request.form['artista_id']
+        if galeria_id == "":
+            fileValues = [artista_id]
+            for name in filenames.values():
+                fileValues.append(name)
+            cur.execute('INSERT INTO galeria(artista_id, foto1, foto2, foto3, foto4) VALUES (%s,%s,%s,%s,%s);',
+                    fileValues)
+            registro = "Ha creado una galeria"
+            cur.execute(f"""INSERT INTO bitacora(usuario,registro) VALUES('{session['correo']}','{registro}')""")
+        else:
+            fileValues = []
+            fileSQL = ' '
+            for key, value in filenames.items():
+                if value:
+                    fileValues.append(value)
+                    fileSQL += f'{key}=%s '
+            fileValues.append(galeria_id)
+            cur.execute(f'''UPDATE artistas SET {fileSQL}
+            WHERE id=%s;''' , fileValues)
+            registro = "Ha editado un artista"
+            cur.execute(f"""INSERT INTO bitacora(usuario,registro) VALUES('{session['correo']}','{registro}')""")
+        mysql.connection.commit()
+        return redirect(request.url)
+    else:
+        eliminar = request.args.get("eliminar")
+        if eliminar is not None:
+            registro = "Ha eliminado una galeria"
+            cur.execute(f"""INSERT INTO bitacora(usuario,registro) VALUES('{session['correo']}','{registro}')""")
+            cur.execute('DELETE FROM galeria WHERE id=%s',eliminar)
+            mysql.connection.commit()
+    cur.execute('SELECT * FROM galeria')
+    galerias = cur.fetchall()
+    cur.execute('SELECT * FROM artistas')
+    artistas = cur.fetchall()
+    context = {
+        "galerias":galerias,
+        "artistas":artistas
+    }
+    return render_template('admin/galeria.html',**context)
 
 
 @app.route("/admin/bitacora")
