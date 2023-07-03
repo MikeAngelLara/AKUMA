@@ -42,20 +42,18 @@
 <script>
     function editar(element){
         const tr = element.parentNode.parentNode.children
-        document.getElementById('artista-id').value = tr[0].textContent
-        document.getElementById('nombre').value = tr[1].textContent
-        document.getElementById('apellido').value = tr[2].textContent
-        document.getElementById('especialidad').value = tr[4].textContent
-        document.getElementById('facebook').value = tr[5].children[0].textContent
-        document.getElementById('instagram').value = tr[5].children[1].textContent
+        document.getElementById('galeria-id').value = tr[0].textContent
+        document.getElementById('img_foto1').innerHTML = tr[2].innerHTML
+        document.getElementById('img_foto2').innerHTML = tr[3].innerHTML
+        document.getElementById('img_foto3').innerHTML = tr[4].innerHTML
+        document.getElementById('img_foto4').innerHTML = tr[5].innerHTML
     }
     function crear(){
-        document.getElementById('artista-id').value = ""
-        document.getElementById('nombre').value = ""
-        document.getElementById('apellido').value = ""
-        document.getElementById('especialidad').value = ""
-        document.getElementById('facebook').value = ""
-        document.getElementById('instagram').value = ""
+        document.getElementById('galeria-id').value = ""
+        document.getElementById('img_foto1').innerHTML = ""
+        document.getElementById('img_foto2').innerHTML = ""
+        document.getElementById('img_foto3').innerHTML = ""
+        document.getElementById('img_foto4').innerHTML = ""
     }
 </script>
 {% endblock %}
@@ -81,18 +79,22 @@
                     <div class="col-12">
                         <label for="foto1">foto1</label>
                         <input type="file" accept="image/*" id="foto1" name="foto1" class="form-control">
+                        <div id="img_foto1"></div>
                     </div>
                     <div class="col-12">
                         <label for="foto2">foto2</label>
                         <input type="file" accept="image/*" id="foto2" name="foto2" class="form-control">
+                        <div id="img_foto2"></div>
                     </div>
                     <div class="col-12">
                         <label for="foto3">foto3</label>
                         <input type="file" accept="image/*" id="foto3" name="foto3" class="form-control">
+                        <div id="img_foto3"></div>
                     </div>
                     <div class="col-12">
                         <label for="foto4">foto4</label>
                         <input type="file" accept="image/*" id="foto4" name="foto4" class="form-control">
+                        <div id="img_foto4"></div>
                     </div>
                   
                     <div class="col-12 mt-2">

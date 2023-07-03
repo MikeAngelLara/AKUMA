@@ -189,6 +189,7 @@ def admin_producto():
     return render_template('admin/producto.html')
 
 def save_photo(name:str):
+    filename = ''
     foto1 = request.files[name]
     if foto1.filename == '':
         flash('No selected file')
@@ -227,10 +228,12 @@ def admin_galeria():
             fileSQL = ' '
             for key, value in filenames.items():
                 if value:
+                    if fileSQL != ' ':
+                        fileSQL += ','
                     fileValues.append(value)
                     fileSQL += f'{key}=%s '
             fileValues.append(galeria_id)
-            cur.execute(f'''UPDATE artistas SET {fileSQL}
+            cur.execute(f'''UPDATE galeria SET {fileSQL}
             WHERE id=%s;''' , fileValues)
             registro = "Ha editado un artista"
             cur.execute(f"""INSERT INTO bitacora(usuario,registro) VALUES('{session['correo']}','{registro}')""")
