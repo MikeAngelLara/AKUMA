@@ -3,6 +3,14 @@
 <h2 style="display: inline-block;" class="mx-2">Artistas</h2>
 <button class="btn btn-primary my-2" data-toggle="modal" data-target="#modal1" style="background-color: #c21616; border-color:#c21616" onclick="crear()">Crear Nuevo</button>
 <div class="table-responsive table--no-card m-b-30">
+    <button onclick="pdfDownload()">Descargar PDF</button>
+        <script>
+        function pdfDownload(){
+            const doc = new  jspdf.jsPDF()
+            doc.autoTable({ html: 'table' })
+            doc.save('table.pdf')
+        }
+        </script>
     <table class="table table-borderless table-striped table-earning">
         <thead>
             <tr>
