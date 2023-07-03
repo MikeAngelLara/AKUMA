@@ -43,275 +43,53 @@
             <h1 class="display-3 text-uppercase mb-0">Tatuadores expertos</h1>
         </div>
         <div class="row g-5">
+            {% for artista in artistas %}
             <div class="col-lg-4 col-md-6">
                 <div class="team-item position-relative">
                     <div class="position-relative overflow-hidden rounded">
-                        <img class="img-fluid w-100" src="/static/img/Julio.jpg" alt="">
+                        <img class="img-fluid w-100" src="/static/uploads/{{artista.foto}}" alt="">
                         <div class="team-overlay">
                             <div class="d-flex align-items-center justify-content-start">
-                                <a class="btn btn-light btn-square rounded-circle mx-1" href="https://www.facebook.com/chivotattooart" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-light btn-square rounded-circle" href="https://www.instagram.com/jbuenotattoo/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-light btn-square rounded-circle mx-1" href="{{artista.facebook}}" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-light btn-square rounded-circle" href="{{artista.instagram}}" target="_blank"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
                     <div class="position-absolute start-0 bottom-0 w-100 rounded-bottom text-center p-4" style="background: rgba(34, 36, 41, .9);">
-                        <h5 class="text-uppercase text-light">Julio Bueno</h5>
-                        <p class="text-uppercase text-secondary m-0">Tatuador</p>
-                        <a href="exampleModal1" data-bs-toggle="modal" data-bs-target="#exampleModal1" class="btn btn-primary py-md-3 px-md-5 me-3">Galería</a>
+                        <h5 class="text-uppercase text-light">{{artista.nombre}} {{artista.apellido}}</h5>
+                        <p class="text-uppercase text-secondary m-0">{{artista.especialidad}}</p>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#artista_{{artista.id}}" class="btn btn-primary py-md-3 px-md-5 me-3">Galería</a>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="team-item position-relative">
-                    <div class="position-relative overflow-hidden rounded">
-                        <img class="img-fluid w-100" src="/static/img/Jose.jpg" alt="">
-                        <div class="team-overlay">
-                            <div class="d-flex align-items-center justify-content-start">
-                                <a class="btn btn-light btn-square rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-light btn-square rounded-circle" href="https://www.instagram.com/jotaharts/"><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="position-absolute start-0 bottom-0 w-100 rounded-bottom text-center p-4" style="background: rgba(34, 36, 41, .9);">
-                        <h5 class="text-uppercase text-light">Jose Hernandez</h5>
-                        <p class="text-uppercase text-secondary m-0">Tatuador</p>
-                        <a href="exampleModal2" data-bs-toggle="modal" data-bs-target="#exampleModal2" class="btn btn-primary py-md-3 px-md-5 me-3">Galería</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="team-item position-relative">
-                    <div class="position-relative overflow-hidden rounded">
-                        <img class="img-fluid w-100" src="/static/img/Mileidy.jpg" alt="">
-                        <div class="team-overlay">
-                            <div class="d-flex align-items-center justify-content-start">
-                                <a class="btn btn-light btn-square rounded-circle mx-1" href="https://www.facebook.com/mileidy.art" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-light btn-square rounded-circle mx-1" href="https://www.instagram.com/mileidyart/" target="_blank"><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="position-absolute start-0 bottom-0 w-100 rounded-bottom text-center p-4" style="background: rgba(34, 36, 41, .9);">
-                        <h5 class="text-uppercase text-light">Mileidy Rojas</h5>
-                        <p class="text-uppercase text-secondary m-0">Tatuadora</p>
-                        <a href="exampleModal3" data-bs-toggle="modal" data-bs-target="#exampleModal3" class="btn btn-primary py-md-3 px-md-5 me-3">Galería</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="team-item position-relative">
-                    <div class="position-relative overflow-hidden rounded">
-                        <img class="img-fluid w-100" src="/static/img/Yuni.JPG" alt="">
-                        <div class="team-overlay">
-                            <div class="d-flex align-items-center justify-content-start">
-                                <a class="btn btn-light btn-square rounded-circle mx-1" href="https://www.facebook.com/yuni.gomez.332" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-light btn-square rounded-circle" href="https://www.instagram.com/yunigomezart/" target="_blank"><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="position-absolute start-0 bottom-0 w-100 rounded-bottom text-center p-4" style="background: rgba(34, 36, 41, .9);">
-                        <h5 class="text-uppercase text-light">Yuni Gómez</h5>
-                        <p class="text-uppercase text-secondary m-0">Tatuadora/Pircier</p>
-                        <a href="exampleModal4" data-bs-toggle="modal" data-bs-target="#exampleModal4" class="btn btn-primary py-md-3 px-md-5 me-3">Galería</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="team-item position-relative">
-                    <div class="position-relative overflow-hidden rounded">
-                        <img class="img-fluid w-100" src="/static/img/Fazzino.JPG" alt="">
-                        <div class="team-overlay">
-                            <div class="d-flex align-items-center justify-content-start">
-                                <a class="btn btn-light btn-square rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-light btn-square rounded-circle" href="https://www.instagram.com/fazzino_vincenzo_/" target="_blank"><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="position-absolute start-0 bottom-0 w-100 rounded-bottom text-center p-4" style="background: rgba(34, 36, 41, .9);">
-                        <h5 class="text-uppercase text-light">Vincenzo Fazzino</h5>
-                        <p class="text-uppercase text-secondary m-0">Tatuador</p>
-                        <a href="exampleModal5" data-bs-toggle="modal" data-bs-target="#exampleModal5" class="btn btn-primary py-md-3 px-md-5 me-3">Galería</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="team-item position-relative">
-                    <div class="position-relative overflow-hidden rounded">
-                        <img class="img-fluid w-100" src="/static/img/Cristopher.JPG" alt="">
-                        <div class="team-overlay">
-                            <div class="d-flex align-items-center justify-content-start">
-                                <a class="btn btn-light btn-square rounded-circle mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-light btn-square rounded-circle" href="https://www.instagram.com/elmenortattoo/" target="_blank"><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="position-absolute start-0 bottom-0 w-100 rounded-bottom text-center p-4" style="background: rgba(34, 36, 41, .9);">
-                        <h5 class="text-uppercase text-light">Cristopher Da Silva</h5>
-                        <p class="text-uppercase text-secondary m-0">Tatuador</p>
-                        <a href="exampleModal6" data-bs-toggle="modal" data-bs-target="#exampleModal6" class="btn btn-primary py-md-3 px-md-5 me-3">Galería</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="team-item position-relative">
-                    <div class="position-relative overflow-hidden rounded">
-                        <img class="img-fluid w-100" src="/static/img/Valentina.JPG" alt="">
-                        <div class="team-overlay">
-                            <div class="d-flex align-items-center justify-content-start">
-                                <a class="btn btn-light btn-square rounded-circle mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-light btn-square rounded-circle" href="https://www.instagram.com/inkedbyvalenn/" target="_blank"><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="position-absolute start-0 bottom-0 w-100 rounded-bottom text-center p-4" style="background: rgba(34, 36, 41, .9);">
-                        <h5 class="text-uppercase text-light">Valentina Carrasquel</h5>
-                        <p class="text-uppercase text-secondary m-0">Tatuadora</p>
-                        <a href="exampleModal7" data-bs-toggle="modal" data-bs-target="#exampleModal7" class="btn btn-primary py-md-3 px-md-5 me-3">Galería</a>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
+            
         </div>
     </div>
     <!-- artistas End -->
 
     <!-- modales -->
 
-        <!-- julio -->
-        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel1"><b>Galería de Julio</b></h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        {% for galeria in galerias %}
+            <div class="modal fade" id="artista_{{galeria.artista_id}}" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel1"><b>Galería de {{galeria.artista.nombre}}</b></h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <section>
+                                <img src="/static/uploads/{{galeria.foto1}}" alt="">
+                                <img src="/static/uploads/{{galeria.foto2}}" alt="">
+                                <img src="/static/uploads/{{galeria.foto3}}" alt="">
+                                <img src="/static/uploads/{{galeria.foto4}}" alt="">
+                            </section>
+                        </div>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <section>
-                        <img src="/static/img/galeriaJulio/1.JPG" alt="">
-                        <img src="/static/img/galeriaJulio/2.JPG" alt="">
-                        <img src="/static/img/galeriaJulio/3.JPG" alt="">
-                        <img src="/static/img/galeriaJulio/4.JPG" alt="">
-                    </section>
-                </div>
-              </div>
             </div>
-        </div>
+        {% endfor %}
+        
 
-        <!-- jose -->
-        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel1"><b>Galería de José</b></h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <section>
-                        <img src="/static/img/galeriajose/1.JPG" alt="">
-                        <img src="/static/img/galeriajose/2.JPG" alt="">
-                        <img src="/static/img/galeriajose/3.JPG" alt="">
-                        <img src="/static/img/galeriajose/4.JPG" alt="">
-                    </section>
-                </div>
-              </div>
-            </div>
-        </div>
-
-        <!-- mileidy -->
-        <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel1"><b>Galería de Mileidy</b></h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <section>
-                        <img src="/static/img/galeriamileidy/1.JPG" alt="">
-                        <img src="/static/img/galeriamileidy/2.JPG" alt="">
-                        <img src="/static/img/galeriamileidy/3.JPG" alt="">
-                        <img src="/static/img/galeriamileidy/4.JPG" alt="">
-                    </section>
-                </div>
-              </div>
-            </div>
-        </div>
-
-        <!-- yuni -->
-        <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel4" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel1"><b>Galería de Yuni</b></h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <section>
-                        <img src="/static/img/galeriayuni/1.JPG" alt="">
-                        <img src="/static/img/galeriayuni/2.JPG" alt="">
-                        <img src="/static/img/galeriayuni/3.JPG" alt="">
-                        <img src="/static/img/galeriayuni/4.JPG" alt="">
-                    </section>
-                </div>
-              </div>
-            </div>
-        </div>
-
-        <!-- vicenzo -->
-        <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel5" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel1"><b>Galería de Vicenzo</b></h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <section>
-                        <img src="/static/img/galeriavicenzo/1.JPG" alt="">
-                        <img src="/static/img/galeriavicenzo/2.JPG" alt="">
-                        <img src="/static/img/galeriavicenzo/3.JPG" alt="">
-                        <img src="/static/img/galeriavicenzo/4.JPG" alt="">
-                    </section>
-                </div>
-              </div>
-            </div>
-        </div>
-
-        <!-- critopher -->
-        <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel6" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel1"><b>Galería de Cristopher</b></h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <section>
-                        <img src="/static/img/galeriacristopher/1.JPG" alt="">
-                        <img src="/static/img/galeriacristopher/2.JPG" alt="">
-                        <img src="/static/img/galeriacristopher/3.JPG" alt="">
-                        <img src="/static/img/galeriacristopher/4.JPG" alt="">
-                    </section>
-                </div>
-              </div>
-            </div>
-        </div>
-
-        <!-- valentina -->
-        <div class="modal fade" id="exampleModal7" tabindex="-1" aria-labelledby="exampleModalLabel7" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel1"><b>Galería de Valentina</b></h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <section>
-                        <img src="/static/img/galeriavalentina/1.JPG" alt="">
-                        <img src="/static/img/galeriavalentina/2.JPG" alt="">
-                        <img src="/static/img/galeriavalentina/3.JPG" alt="">
-                        <img src="/static/img/galeriavalentina/4.JPG" alt="">
-                    </section>
-                </div>
-              </div>
-            </div>
-        </div>
 {% endblock %}

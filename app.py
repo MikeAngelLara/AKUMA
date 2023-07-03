@@ -2,7 +2,7 @@ import os
 from flask import Flask, render_template, request, session, redirect, url_for, flash
 from flask_mysqldb import MySQL
 from werkzeug.utils import secure_filename
-
+from MySQLdb.cursors import DictCursor
 app = Flask(__name__)
 
 UPLOAD_FOLDER = 'static/uploads/'
@@ -76,7 +76,19 @@ def registro():
 
 @app.route("/artistas")
 def artistas():
-    return render_template('Artistas.html')
+    cur = mysql.connection.cursor(DictCursor)
+    cur.execute('SELECT * FROM galeria')
+    galerias = cur.fetchall()
+    cur.execute('SELECT * FROM artistas')
+    artistas = cur.fetchall()
+    for g in galerias: 
+        g['artista'] = list(filter(lambda x:x['id'] == g['artista_id'] ,artistas))[0]
+    context = {
+        "galerias" : galerias,
+        "artistas":artistas
+    }
+    print(context)
+    return render_template('Artistas.html',**context)
 
 
 @app.route("/contactos")
