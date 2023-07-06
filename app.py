@@ -7,9 +7,9 @@ app = Flask(__name__)
 
 UPLOAD_FOLDER = 'static/uploads/'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = '' 
+app.config['MYSQL_HOST'] = 'MikeLara.mysql.pythonanywhere-services.com'
+app.config['MYSQL_USER'] = 'MikeLara'
+app.config['MYSQL_PASSWORD'] = 'dinosauriofeliz45@' 
 app.config['MYSQL_DB'] = 'akuma'
 mysql = MySQL(app)
 app.secret_key = b'192b9bdd22ab9ed4d12e236c78afcb9a393ec15f71bbf5dc987d54727823bcbf'
