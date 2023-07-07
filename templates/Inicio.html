@@ -1,13 +1,20 @@
 {% extends 'base.html' %}
+
 {% block titulo %}{% endblock %}
 {% block content %}
+<style>
+.carrusel-img{
+ width: 100%;
+}
 
+ /*height: 70vh; */
+</style>
 <!-- Carousel Start -->
 <div class="container-fluid p-0">
     <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img style="height: 70vh;" src="/static/img/Carrusel1.jpg" alt="Image">
+                <img class="carrusel-img" src="/static/img/Carrusel1.jpg" alt="Image">
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                     <div class="p-3" style="max-width: 900px;">
                         <div style="width: 100%;"><h1 class="display-2 text-white text-uppercase mb-md-4">Hacemos tus ideas realidad!</h1></div>
